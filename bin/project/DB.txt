@@ -1,0 +1,85 @@
+drop sequence shoseq;
+create sequence shoseq
+	increment by 1
+	start with 1
+	minvalue 1
+	nocache;
+	
+drop table shopping purge ;
+create table shopping(
+	id number primary key,
+	name varchar2(30),  
+	stock number, 
+	price number,
+	category varchar2(30), 
+	inputdate date default sysdate
+);
+
+drop sequence prdseq;
+create sequence prdseq
+	increment by 1
+	start with 1
+	minvalue 1
+	nocache;
+	
+drop table products purge ;
+create table products(
+	id number primary key,
+	name varchar2(30),  
+	stock number, 
+	price number,
+	category varchar2(30), 
+	inputdate date default sysdate
+);
+
+drop sequence prouserseq;
+create sequence prouserseq
+	increment by 1
+	start with 1
+	minvalue 1
+	nocache;
+  
+drop table prouser purge ;
+create table prouser(
+  userid varchar2(30),
+  userpw varchar2(30),
+	username varchar2(30)
+);
+
+select * from prouser;
+
+insert into products values(prdseq.nextval,'청소기',20,300,'전자기기', default); 
+insert into products values(prdseq.nextval,'무선이어폰',5,500,'전자기기', default); 
+insert into products values(prdseq.nextval,'헤어드라이기',10,300,'전자기기', default); 
+insert into products values(prdseq.nextval,'TV',9,1000,'전자기기', default); 
+insert into products values(prdseq.nextval,'노트북',3,800,'전자기기', default); 
+insert into products values(prdseq.nextval,'컴퓨터',17,1200,'전자기기', default); 
+insert into products values(prdseq.nextval,'치킨',70,500,'음식', default); 
+insert into products values(prdseq.nextval,'피자',30,400,'음식', default); 
+insert into products values(prdseq.nextval,'족발',40,300,'음식', default); 
+insert into products values(prdseq.nextval,'떡볶이',100,100,'음식', default); 
+insert into products values(prdseq.nextval,'돈까스',7,100,'음식', default); 
+insert into products values(prdseq.nextval,'오뎅',20,50,'음식', default); 
+insert into products values(prdseq.nextval,'순대',18,150,'음식', default); 
+insert into products values(prdseq.nextval,'옥수수',200,30,'음식', default); 
+insert into products values(prdseq.nextval,'기타',8,1500,'음악', default); 
+insert into products values(prdseq.nextval,'피아노',2,2000,'음악', default); 
+insert into products values(prdseq.nextval,'바이올린',5,2000,'음악', default); 
+insert into products values(prdseq.nextval,'드럼',1,4000,'음악', default); 
+insert into products values(prdseq.nextval,'드럼스틱',50,300,'음악', default); 
+insert into products values(prdseq.nextval,'베이스',10,1000,'음악', default); 
+insert into products values(prdseq.nextval,'고래밥',100,50,'과자', default);
+insert into products values(prdseq.nextval,'썬칩',50,100,'과자', default);
+insert into products values(prdseq.nextval,'포카칩',70,120,'과자', default);
+insert into products values(prdseq.nextval,'칸쵸',40,70,'과자', default);
+insert into products values(prdseq.nextval,'오레오',20,150,'과자', default);
+insert into products values(prdseq.nextval,'꼬북칩',27,90,'과자', default);
+insert into products values(prdseq.nextval,'오예스',77,110,'과자', default);
+insert into products values(prdseq.nextval,'초코파이',65,140,'과자', default);
+insert into products values(prdseq.nextval,'신라면',120,50,'라면', default); 
+insert into products values(prdseq.nextval,'진라면',200,40,'라면', default); 
+insert into products values(prdseq.nextval,'짜파게티',140,60,'라면', default); 
+insert into products values(prdseq.nextval,'불닭볶음면',160,55,'라면', default); 
+insert into products values(prdseq.nextval,'참깨라면',80,80,'라면', default); 
+insert into products values(prdseq.nextval,'꼬꼬면',70,45,'라면', default); 
+commit;
